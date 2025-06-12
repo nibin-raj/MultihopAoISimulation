@@ -36,6 +36,7 @@ Figures 8 and 9 in [[1]](#1) present the Age-of-Information performance under th
 
 *Reproduced Age-Difference results for a single-source scenario under the 1-hop interference constraint ($`K = 1`$), replicating the results presented in Figure 8 of [[1]](#1). The performance of the proposed Index policy $`\pi_{\text{Index}}`$ is also shown for comparison.*
 
+For the $1$-hop interference model, the Age-Difference policy outperforms $`\pi_{\text{Index}}`$ because it allows multiple packets from a source $s$ to coexist in the network at a given timeslot, whereas $`\pi_{\text{Index}}`$ permits only one packet per source. 
 
 #### Complete Interference Model
 
@@ -43,6 +44,7 @@ Figures 8 and 9 in [[1]](#1) present the Age-of-Information performance under th
 
 *Reproduced Age-Difference results for a single-source scenario under the Complete Interference model, replicating the results presented in Figure 9 of [[1]](#1). The results also include the proposed Index policy $`\pi_{\text{Index}}`$ for comparison.*
 
+Under the complete interference model, $`\pi_{\text{Index}}`$ and the Age-Difference policy gives similar performance.
 
 
 ## References
