@@ -27,6 +27,7 @@ class Source:
         self.s = 0
         self.h_track = []
         self.s_track = []
+        self.max_tau = max_tau
         
         # Precompute expected times
         self.E_T = self.compute_expected_times_cached(ps_val, self.hs)[self.hs - 1]
@@ -101,21 +102,19 @@ class Source:
     def compute_D_tau(self, tau, ps):
         tau = int(tau)
         if tau > self.hs:
-            a_values = np.arange(self.hs, tau + 1)
+            a_values = np.arange(self.hs, self.max_tau + 1)
             den = np.sum(self.P_Tminus_cache[:tau] * (tau - np.arange(tau))) + np.sum(self.P_Tminus_cache[a_values] * self.E_T)
-            return self.hs / den
+            return self.E_T / den
         else:
             return 1
 
     def compute_A_tau(self, tau, ps):
         tau = int(tau)
         if tau > self.hs:
-            a_values = np.arange(self.hs, tau + 1)
+            a_values = np.arange(self.hs, self.max_tau + 1)
             num = np.sum(self.P_Tminus_cache[a_values] * (a_values * self.E_T)) + \
                   (self.E_T2 - self.E_T) / 2 + \
-                  np.sum(self.P_Tminus_cache[:tau] * (
-                      np.arange(tau) * (tau - np.arange(tau)) + ((tau - np.arange(tau)) ** 2 + 
-                      (tau - np.arange(tau)) * (2 * self.E_T - 1)) / 2))
+                  np.sum(self.P_Tminus_cache[:tau] * ( np.arange(tau) * (tau - np.arange(tau)) + ((tau - np.arange(tau)) ** 2 +  (tau - np.arange(tau)) * (2 * self.E_T - 1)) / 2))
 
             den = np.sum(self.P_Tminus_cache[:tau] * (tau - np.arange(tau))) + np.sum(self.P_Tminus_cache[a_values] * self.E_T)
             return num / den
