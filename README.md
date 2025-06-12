@@ -16,7 +16,7 @@ We consider a network where each link has a transmission success probability $p_
 
 In [[1]](#1), two interference models were analyzed:
 
-1. $K$-hop Interference Model (with $K = 1$): Also known as the 1-hop interference model, where two links can be active simultaneously only if they are at least two hops apart.
+1. $K$-hop Interference Model (with $K = 1$): Also known as the 1-hop interference model, where two links can be active simultaneously only if they are at least $K$ hops apart.
 
 2. Complete Interference Model: All nodes interfere with each other, allowing only one transmission in the network per time slot.
 
@@ -28,17 +28,17 @@ Figures 8 and 9 in [[1]](#1) present the Age-of-Information performance under th
 
 #### 1-Hop Interference Model
 
-![Reproduced Age-Difference policy along with proposed Index policy $\pi_{\text{Index}}$ for 1-hop interference model](https://github.com/nibin-raj/Multihop-AoI-IndexPolicy-Simulation/tree/main/figures/AoI_Line_Khop1_p1.png)
+![Reproduced Age-Difference policy along with proposed Index policy $`\pi_{\text{Index}}`$ for 1-hop interference model](https://github.com/nibin-raj/Multihop-AoI-IndexPolicy-Simulation/tree/main/figures/AoI_Line_Khop1_p1.png)
 
-*Reproduced Age-Difference results for a single-source scenario under the 1-hop interference constraint ($K = 1$), showing close agreement with Figure 8 in [[1]](#1). The performance of the proposed Index policy $\pi_{\text{Index}}$ is also shown for comparison.*
+*Reproduced Age-Difference results for a single-source scenario under the 1-hop interference constraint ($`K = 1`$), replicating the results presented in Figure 8 of [[1]](#1). The performance of the proposed Index policy $\`pi_{\text{Index}}`$ is also shown for comparison.*
 
 ---
 
 #### Complete Interference Model
 
-![Reproduced Age-Difference policy along with proposed Index policy $\pi_{\text{Index}}$ for Complete Interference model](https://github.com/nibin-raj/Multihop-AoI-IndexPolicy-Simulation/tree/main/figures/AoI_Line_ComINT_p1.png)
+![Reproduced Age-Difference policy along with proposed Index policy $`\pi_{\text{Index}}`$ for Complete Interference model](https://github.com/nibin-raj/Multihop-AoI-IndexPolicy-Simulation/tree/main/figures/AoI_Line_ComINT_p1.png)
 
-*Reproduced Age-Difference results for a single-source scenario under the Complete Interference model, showing close agreement with Figure 9 in [[1]](#1). The results also include the proposed Index policy $\pi_{\text{Index}}$ for comparison.*
+*Reproduced Age-Difference results for a single-source scenario under the Complete Interference model, replicating the results presented in Figure 9 of [[1]](#1). The results also include the proposed Index policy $`\pi_{\text{Index}}`$ for comparison.*
 
 ---
 
