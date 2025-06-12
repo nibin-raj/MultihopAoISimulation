@@ -1,16 +1,18 @@
 
 # Sampling and scheduling policies for minimizing age-of-information in multi-hop wireless networks
 Submitted for review
-
+---
 ### Multihop AoI Simulator
 
 This repository contains the source code for the Multihop Age-of-Information (AoI) Index Policy Simulator, designed to validate and reproduce key results from Tripathi et al., "Information Freshness in Multihop Wireless Networks" [[1]](#1).
-
+---
 ## Age-Difference Policy and Simulator Validation Results
 
 This section presents simulation results obtained using our simulator to reproduce the Age-Difference policy results from [1] and to compare them against our proposed Index policy, denoted as $\pi_{\text{Index}}$.
 
 We consider a network where each link has a transmission success probability $p_t$, and failure probability $1 - p_t$. For the results presented here, we assume reliable links, i.e., $p_t = 1$.
+
+---
 
 ### Validation Results
 
