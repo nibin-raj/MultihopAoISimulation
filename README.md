@@ -38,7 +38,6 @@ Figures 8 and 9 in [[1]](#1) present the Age-of-Information performance under th
 
 *Reproduced Age-Difference results for a single-source scenario under the 1-hop interference constraint ($`K = 1`$), replicating the results presented in Figure 8 of [[1]](#1). The performance of the proposed Index policy $`\pi_{\text{Index}}`$ is also shown for comparison.*
 
----
 
 #### Complete Interference Model
 
