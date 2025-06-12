@@ -3,7 +3,7 @@
 Submitted for review
 
 
-### Multihop AoI Simulator
+### Multihop AoI Index Policy  Simulator
 
 This repository contains the source code for the Multihop Age-of-Information (AoI) Index Policy Simulator, designed to validate and reproduce key results from Tripathi et al., "Information Freshness in Multihop Wireless Networks" [[1]](#1).
 
