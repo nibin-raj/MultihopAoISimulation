@@ -21,7 +21,7 @@ class Source:
 
     def __init__(self, hs, ps_val, max_tau=10000):
         self.hs = hs
-        self.aoi = 1e-20  # Initial AoI
+        self.aoi = 1e-20  
         self.age_track = []
         self.h = self.hs
         self.s = 0
@@ -30,10 +30,11 @@ class Source:
         self.max_tau = max_tau
         
         # Precompute expected times
-        self.E_T = self.compute_expected_times_cached(ps_val, self.hs)[self.hs - 1]
-        self.E_T2 = self.compute_second_moment_times_cached(ps_val, self.hs)[self.hs - 1]
+        E_T_i = self.compute_expected_times_cached(ps_val, self.hs)[self.hs - 2] 
+        self.E_T = 1 + E_T_i  
+        E_T2_i = self.compute_second_moment_times_cached(ps_val, self.hs)[self.hs - 2]
+        self.E_T2 = 1 + (2*E_T_i) + E_T2_i  
         
-
         # Precompute P_Tminus values
         self.P_Tminus_cache = self.precompute_P_Tminus(max_tau, ps_val)
 
