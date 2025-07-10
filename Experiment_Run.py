@@ -34,23 +34,25 @@ ps_values = {}
 for sou in link_list:
     head_,tail_ = sou[0],sou[1]
     ps_values[(head_,tail_)] = 0.6  #Homogeneous Links
-    #ps_values[(head_,tail_)] = random.uniform(0.6, 1.0)  #Heterogeneous Links
 source_ps = list(ps_values.values())
 
 source_hs = [nx.shortest_path_length(G_up, source=node, target=0) for node in source_list]
 
 #### Index Polciy
-num_sources1 = len(source_ps)
-sources = [Source(source_hs[i],source_ps[i]) for i in range(num_sources1)]
-for t in range(iterno):
-    indices = np.zeros((num_sources1, 1))
-    for s in range(num_sources1):
-        indices[s] = sources[s].compute_index(source_ps[s])
+num_sources = len(source_list)
+sources_index = [Source(source_hs[i],source_ps[i]) for i in range(num_sources)]
+for t in range(iterno): 
+    indices = np.zeros((num_sources, 1)) 
+    for s in range(num_sources):  
+        indices[s] = sources_index[s].compute_index(source_ps[s])
     scheduled_source = np.argmax(indices)
-    for s in range(num_sources1):
-        sources[s].step(s == scheduled_source, source_ps[s])
-        
-scheduler_aoi = [np.mean(source.age_track) for source in sources]
+
+    for s in range(num_sources):
+        if s == scheduled_source: 
+            sources_index[s].step(True, source_ps[s])    
+        else:
+            sources_index[s].step(False, source_ps[s])
+scheduler_aoi = [np.mean(source.age_track) for source in sources_index] 
 AoI_Indexscheduler = np.mean(scheduler_aoi)
 print(AoI_Indexscheduler)
 
